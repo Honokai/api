@@ -26,7 +26,6 @@
 #### ALUNO POST
 ```json
 {
-  {   
     "matricula": "2017200458",
     "curso": {
         "descricao": "nome do curso"
