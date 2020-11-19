@@ -23,7 +23,7 @@ module.exports = (() => {
       res.json(questao)
     })
   
-    router.put("/", async (req, res) => {
+    router.put("/:id", async (req, res) => {
       const questao = await questaoController.update(req.body, req.params.id)
       res.json(questao)
     })

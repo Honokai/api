@@ -2,7 +2,7 @@ const models = require("../db/models")
 
 exports.create = async (aluno) => {
   const resultado = await models.aluno.create(aluno, {
-    include: ['usuario', 'curso']
+    include: ['usuario', 'curso', 'hardskill', 'softskill']
   }).catch(err => {return err})
   return resultado
 }
