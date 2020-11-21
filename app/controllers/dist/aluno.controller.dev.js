@@ -10,7 +10,7 @@ exports.create = function _callee(aluno) {
         case 0:
           _context.next = 2;
           return regeneratorRuntime.awrap(models.aluno.create(aluno, {
-            include: ['usuario', 'curso', 'hardskill', 'softskill', 'turma']
+            include: ['usuario', 'curso', 'hardskill', 'softskill', 'turma', 'grupo']
           })["catch"](function (err) {
             return err;
           }));
@@ -34,7 +34,9 @@ exports.index = function _callee2() {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return regeneratorRuntime.awrap(models.aluno.findAll()["catch"](function (err) {
+          return regeneratorRuntime.awrap(models.aluno.findAll({
+            include: ['turma']
+          })["catch"](function (err) {
             return err;
           }));
 
@@ -58,7 +60,7 @@ exports.findOne = function _callee3(id) {
         case 0:
           _context3.next = 2;
           return regeneratorRuntime.awrap(models.aluno.findByPk(id, {
-            include: ['usuario', 'hardskill', 'softskill', 'turma']
+            include: ['usuario', 'hardskill', 'softskill', 'turma', 'grupo']
           }));
 
         case 2:

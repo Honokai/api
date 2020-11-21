@@ -4,7 +4,7 @@ const name = require('path').basename(__filename.replace('.model',''), '.js')
 
 const Grupo = sequelize.define(name, {
     grupo_nome: {
-        type: DataTypes.STRING(25)
+        type: DataTypes.STRING(50)
     }
 }, {
     sequelize,
