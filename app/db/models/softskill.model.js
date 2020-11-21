@@ -28,6 +28,15 @@ SoftSkill.associate = (models) => {
         },
         as: 'aluno'
     })
+
+    SoftSkill.belongsToMany(models.avaliacao360, {
+        through: 'avaliacao360_softskill',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_softskill'
+        },
+        as: 'avaliacao360'
+    })
 }
 
 module.exports = SoftSkill

@@ -13,6 +13,7 @@ const Aluno = sequelize.define(name, {
 })
 
 Aluno.associate = (models) => {
+    
     Aluno.belongsTo(models.usuario, {
         foreignKey: {
             name: 'id_usuario',
@@ -21,6 +22,7 @@ Aluno.associate = (models) => {
         },
         as: 'usuario'
     })
+
     Aluno.belongsToMany(models.hardskill, {
         through: 'aluno_hardskill',
         timestamps: false,
@@ -29,6 +31,16 @@ Aluno.associate = (models) => {
         },
         as: 'hardskill'
     })
+
+    Aluno.belongsToMany(models.turma, {
+        through: 'aluno_turma',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_aluno',
+        },
+        as: 'turma'
+    })
+
     Aluno.belongsToMany(models.softskill, {
         through: 'aluno_softskill',
         timestamps: false,
@@ -37,12 +49,29 @@ Aluno.associate = (models) => {
         },
         as: 'softskill'
     })
+
+    Aluno.belongsToMany(models.grupo, {
+        through: 'aluno_grupo',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_aluno'
+        },
+        as: 'grupo'
+    })
+
     Aluno.belongsTo(models.curso, {
         foreignKey:{
             name: 'id_curso',
             allowNull: false
         },
         as: 'curso'
+    })
+
+    Aluno.hasMany(models.avaliacao360, {
+        foreignKey: {
+            name: 'id_aluno'
+        },
+        as: 'avaliacao360'
     })
 }
 

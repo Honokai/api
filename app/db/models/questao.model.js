@@ -20,12 +20,27 @@ const Questao = sequelize.define(name, {
 })
 
 Questao.associate = (models) => {
+    
     Questao.belongsTo(models.usuario, {
         foreignKey: {
             name: 'id_usuario',
             allowNull: false
         },
         as: 'usuario'
+    })
+
+    Questao.belongsTo(models.hardskill, {
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'hardskill'
+    })
+
+    Questao.hasMany(models.questaodia, {
+        foreignKey: {
+            name: 'id_questao'
+        },
+        as: 'questaodia'
     })
 }
 

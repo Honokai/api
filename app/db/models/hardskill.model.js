@@ -20,6 +20,7 @@ const HardSkill = sequelize.define(name, {
 })
 
 HardSkill.associate = (models) => {
+    
     HardSkill.belongsToMany(models.aluno, {
         through: 'aluno_hardskill',
         timestamps: false,
@@ -27,6 +28,40 @@ HardSkill.associate = (models) => {
             name: 'id_hardskill'
         },
         as: 'aluno'
+    })
+
+    HardSkill.belongsToMany(models.disciplina, {
+        through: 'disciplina_hardskill',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'disciplina'
+    })
+
+    HardSkill.belongsToMany(models.turma, {
+        through: 'hardskill_turma',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'turma'
+    })
+
+    HardSkill.belongsToMany(models.atividadeAvaliativa, {
+        through: 'atividade_hardskill',
+        timestamps: false,
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'atividadeAvaliativa'
+    })
+
+    HardSkill.hasMany(models.questao, {
+        foreignKey: {
+            name: 'id_hardskill'
+        },
+        as: 'questao'
     })
 }
 

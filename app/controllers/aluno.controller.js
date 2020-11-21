@@ -2,19 +2,19 @@ const models = require("../db/models")
 
 exports.create = async (aluno) => {
   const resultado = await models.aluno.create(aluno, {
-    include: ['usuario', 'curso', 'hardskill', 'softskill']
+    include: ['usuario', 'curso', 'hardskill', 'softskill', 'turma']
   }).catch(err => {return err})
   return resultado
 }
 
 
 exports.index = async () => {
-  const resultado = await models.aluno.findAll({include: ['usuario']}).catch(err => {return err})
+  const resultado = await models.aluno.findAll().catch(err => {return err})
   return resultado
 }
 
 exports.findOne = async (id) => {
-  const resultado = await models.aluno.findByPk(id, {include: ['usuario', 'hardskill', 'softskill']})
+  const resultado = await models.aluno.findByPk(id, {include: ['usuario', 'hardskill', 'softskill', 'turma']})
   return resultado
 }
 
