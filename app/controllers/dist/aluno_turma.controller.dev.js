@@ -56,12 +56,11 @@ exports.create = function _callee(obj, id_aluno) {
           break;
 
         case 19:
-          aluno.addTurma(novo_turma)["catch"](function (err) {
+          return _context.abrupt("return", aluno.addTurma(novo_turma)["catch"](function (err) {
             console.log(err);
-          });
-          return _context.abrupt("return", true);
+          }));
 
-        case 21:
+        case 20:
         case "end":
           return _context.stop();
       }
@@ -112,10 +111,17 @@ exports.destroy = function _callee2(obj, id_aluno) {
           break;
 
         case 16:
-          aluno.removeTurma(novo_turma);
-          return _context2.abrupt("return", true);
+          return _context2.abrupt("return", aluno.removeTurma(novo_turma).then(function (data) {
+            return data > 0 ? {
+              "mensagem": "Registros alterados " + data
+            } : {
+              "mensagem": "Nenhum registro alterado"
+            };
+          })["catch"](function (error) {
+            return error;
+          }));
 
-        case 18:
+        case 17:
         case "end":
           return _context2.stop();
       }

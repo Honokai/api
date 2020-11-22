@@ -15,8 +15,7 @@ exports.create = async (obj, id_aluno) => {
     novo_turma.push(resultado.id)
     
   }
-  aluno.addTurma(novo_turma).catch(err => {console.log(err)})
-  return true
+  return aluno.addTurma(novo_turma).catch(err => {console.log(err)})
 }
 
 exports.destroy = async (obj, id_aluno) => {
@@ -30,7 +29,8 @@ exports.destroy = async (obj, id_aluno) => {
     novo_turma.push(resultado.id)
   }
 
-aluno.removeTurma(novo_turma)
-
-return true
+  return aluno.removeTurma(novo_turma).then(
+    data => {return data>0?{"mensagem":"Registros alterados "+ data}: {"mensagem":"Nenhum registro alterado"}
+  }).catch(error => {return error})
+ 
 }
