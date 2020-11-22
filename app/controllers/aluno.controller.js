@@ -9,12 +9,12 @@ exports.create = async (aluno) => {
 
 
 exports.index = async () => {
-  const resultado = await models.aluno.findAll({include: ['turma']}).catch(err => {return err})
+  const resultado = await models.aluno.findAll().catch(err => {return err})
   return resultado
 }
 
 exports.findOne = async (id) => {
-  const resultado = await models.aluno.findByPk(id, {include: ['usuario', 'hardskill', 'softskill', 'turma', 'grupo']})
+  const resultado = await models.aluno.findByPk(id, {include: ['usuario', 'curso', 'hardskill', 'softskill', 'turma', 'grupo']})
   return resultado
 }
 

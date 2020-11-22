@@ -18,10 +18,6 @@
 7. aluno_hardskills (POST, DELETE)
 8. aluno_softskills (POST, DELETE)
 
-### OBSERVAÇÕES
-
-**PARA CRIAÇÃO DE ALUNO, SEM APRESENTAÇÃO DE ERRO, É NECESSÁRIO QUE HAJA UM CURSO, E QUE ESTE CURSO SEJA INFORMADO QUANDO INSERINDO O MESMO**
-
 ### Formato esperado para cada recurso 
 #### ALUNO POST
 ```json
@@ -42,7 +38,16 @@
     "softskill": [
         {"descricao": "nova soft 1"},
         {"descricao": "nova soft 2"}
+    ],
+    "grupo": [
+      {"grupo_nome": "Nome do grupo aqui oh"},
+      {"grupo_nome": "Olha soh temos outro grupo aqui"}
+    ],
+    "turma": [
+      {"turma_nome": "865 - pastelaria"},
+      {"turma_nome": "865 - OTELARIA"}
     ]
+//----------------------fim opcionais-----------------------------
 }
 ```
 OU 
