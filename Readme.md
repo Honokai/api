@@ -1,39 +1,30 @@
 # API
 - [API](#api)
-  - [URLs disponíveis](#urls-disponíveis)
-    - [Recursos disponíveis](#recursos-disponíveis)
-      - [URL para os recursos](#url-para-os-recursos)
-      - [Recursos de tabelas associativas](#recursos-de-tabelas-associativas)
-    - [Formato esperado para cada recurso](#formato-esperado-para-cada-recurso)
-      - [Aluno POST](#aluno-post)
-      - [Aluno PUT](#aluno-put)
-      - [Usuário POST](#usuário-post)
-      - [Usuário PUT](#usuário-put)
-      - [HardSkill POST](#hardskill-post)
-      - [HardSkill PUT](#hardskill-put)
-      - [SoftSkill POST](#softskill-post)
-      - [SoftSkill PUT](#softskill-put)
-      - [Questões POST](#questões-post)
-      - [Questões PUT](#questões-put)
-      - [Curso POST](#curso-post)
-      - [Curso PUT](#curso-put)
-      - [Aluno_turma POST](#aluno_turma-post)
-      - [Aluno_turma DELETE](#aluno_turma-delete)
-      - [Aluno_hardskill POST](#aluno_hardskill-post)
-      - [Aluno_hardskill DELETE](#aluno_hardskill-delete)
-      - [aluno_softskill POST](#aluno_softskill-post)
-      - [aluno_softskill DELETE](#aluno_softskill-delete)
+  - [Recursos disponíveis](#recursos-disponíveis)
+    - [URL para os recursos](#url-para-os-recursos)
+    - [Recursos de tabelas associativas](#recursos-de-tabelas-associativas)
+  - [Formato esperado para cada recurso](#formato-esperado-para-cada-recurso)
+    - [Aluno POST](#aluno-post)
+    - [Aluno PUT](#aluno-put)
+    - [Usuário POST](#usuário-post)
+    - [Usuário PUT](#usuário-put)
+    - [HardSkill POST](#hardskill-post)
+    - [HardSkill PUT](#hardskill-put)
+    - [SoftSkill POST](#softskill-post)
+    - [SoftSkill PUT](#softskill-put)
+    - [Questões POST](#questões-post)
+    - [Questões PUT](#questões-put)
+    - [Curso POST](#curso-post)
+    - [Curso PUT](#curso-put)
+    - [Aluno_turma POST](#aluno_turma-post)
+    - [Aluno_turma DELETE](#aluno_turma-delete)
+    - [Aluno_hardskill POST](#aluno_hardskill-post)
+    - [Aluno_hardskill DELETE](#aluno_hardskill-delete)
+    - [aluno_softskill POST](#aluno_softskill-post)
+    - [aluno_softskill DELETE](#aluno_softskill-delete)
   - [Integrantes](#integrantes)
 
-## URLs disponíveis
-1. Exemplos:
-  * http://localhost:3000/api/aluno - GET
-  * http://localhost:3000/api/aluno/:id - GET 
-  * http://localhost:3000/api/aluno - POST
-  * http://localhost:3000/api/aluno/:id - PUT
-  * http://localhost:3000/api/aluno/:id - DELETE
-
-### Recursos disponíveis
+## Recursos disponíveis
 1. aluno (GET, [POST](#aluno-post), [PUT](#aluno-put), DELETE)  
 2. professor (GET, [POST](#professor-post), [PUT](#professor-put), DELETE)
 3. softskill (GET, [POST](#softskill-post), [PUT](#softskill-put), DELETE)
@@ -44,16 +35,16 @@
 8. aluno_softskills ([POST](#aluno_softskills-post), [DELETE](#aluno_softskills-delete))
 9. aluno_turma ([POST](#aluno_turma-post), [DELETE](#aluno_turma-delete))
 
-#### URL para os recursos
+### URL para os recursos
 |URL | MÉTODO | DESCRIÇÃO|
 |----|--------|----------|
 |http://localhost:3000/api/usuario |  **GET** | Listar todos os alunos cadastrados|
 |http://localhost:3000/api/usuario |  **POST** | Criar um novo registro para usuário|
-|http://localhost:3000/api/usuario |  **GET** | Listar todos os alunos cadastrados|
+|http://localhost:3000/api/usuario/:id |  **GET** | Listar o aluno pelo `:id` informado na url |
 |http://localhost:3000/api/usuario/:id |  **PUT** | `:id` é esperado um número que será o id do usuário a ser atualizado, atualiza um registro existente|
 |http://localhost:3000/api/usuario/:id |  **DELETE** | `:id` é esperado um número que será o id do usuário a ser deletado, exclui um registro existente. |
 
-#### Recursos de tabelas associativas
+### Recursos de tabelas associativas
 | URL  | MÉTODO  | DESCRICAO |
 |---|---|---|
 | http://localhost:3000/api/aluno_hardskill/:id  |  **POST** |  `:id` é o identificador do aluno, cria um registro para na tabela associativa **aluno_hardskill**
@@ -61,8 +52,8 @@
 | http://localhost:3000/api/aluno_softskill/:id  |  **POST** | `:id` é o identificador do aluno, cria um registro para na tabela associativa **aluno_softskill**
 
 
-### Formato esperado para cada recurso 
-#### Aluno POST
+## Formato esperado para cada recurso 
+### Aluno POST
 Campos `id_usuario` e `id_curso` não podem ser omitidos quando criando um registro de aluno.
 ```json
 {
@@ -105,7 +96,7 @@ OU
 }
 ```
 
-#### Aluno PUT
+### Aluno PUT
 
 ```json
 {
@@ -119,7 +110,7 @@ OU
 }
 ```
 
-#### Usuário POST
+### Usuário POST
 ```json
 {
     "nome_completo": "ERICK",
@@ -138,7 +129,7 @@ OU
 //----------fim opcionais------------
 ```
 
-#### Usuário PUT
+### Usuário PUT
 Você pode alterar basicamente os mesmos campos que quando cria.
 ```json
 {
@@ -148,7 +139,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### HardSkill POST
+### HardSkill POST
 
 ```json
 { 
@@ -156,14 +147,14 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### HardSkill PUT
+### HardSkill PUT
 ```json
 { 
   "descricao": "alteracao aqui"
 }
 ```
 
-#### SoftSkill POST
+### SoftSkill POST
 
 ```json
 { 
@@ -171,14 +162,14 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### SoftSkill PUT
+### SoftSkill PUT
 ```json
 { 
   "descricao": "SoftSkill alteracao aqui"
 }
 ```
 
-#### Questões POST
+### Questões POST
 
 ```json
 { 
@@ -186,14 +177,14 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### Questões PUT
+### Questões PUT
 ```json
 { 
   "descricao": "questao revista aqui"
 }
 ```
 
-#### Curso POST
+### Curso POST
 
 ```json
 { 
@@ -201,14 +192,14 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### Curso PUT
+### Curso PUT
 ```json
 { 
   "nome_curso": "alteracao aqui"
 }
 ```
 
-#### Aluno_turma POST
+### Aluno_turma POST
 ```json
 {
   "turma": [
@@ -219,7 +210,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### Aluno_turma DELETE
+### Aluno_turma DELETE
 ```json
 {
   "turma": [
@@ -230,7 +221,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### Aluno_hardskill POST
+### Aluno_hardskill POST
 ```json
 {
   "hardskill": [
@@ -241,7 +232,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### Aluno_hardskill DELETE
+### Aluno_hardskill DELETE
 ```json
 {
   "hardskill": [
@@ -252,7 +243,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### aluno_softskill POST
+### aluno_softskill POST
 ```json
 { 
   "softskill": [
@@ -263,7 +254,7 @@ Você pode alterar basicamente os mesmos campos que quando cria.
 }
 ```
 
-#### aluno_softskill DELETE
+### aluno_softskill DELETE
 ```json
 {
   "softskill": [
