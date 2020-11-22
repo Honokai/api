@@ -34,15 +34,15 @@
   * http://localhost:3000/api/aluno/:id - DELETE
 
 ### Recursos disponíveis
-1. aluno (GET, POST, PUT, DELETE)  
-2. professor (GET, POST, PUT, DELETE)
-3. softskill (GET, POST, PUT, DELETE)
-4. hardskill (GET, POST, PUT, DELETE)
-5. curso (GET, POST, PUT, DELETE)
-6. usuario (GET, POST, PUT, DELETE)
-7. aluno_hardskills (POST, DELETE)
-8. aluno_softskills (POST, DELETE)
-9. aluno_turma (POST, DELETE)
+1. aluno (GET, [POST](#aluno-post), [PUT](#aluno-put), DELETE)  
+2. professor (GET, [POST](#professor-post), [PUT](#professor-put), DELETE)
+3. softskill (GET, [POST](#softskill-post), [PUT](#softskill-put), DELETE)
+4. hardskill (GET, [POST](#hardskill-post), [PUT](#hardskill-put), DELETE)
+5. curso (GET, [POST](#curso-post), [PUT](#curso-put), DELETE)
+6. usuario (GET, [POST](#usuario-post), [PUT](#usuario-put), DELETE)
+7. aluno_hardskills ([POST](#aluno_hardskill-post), [DELETE](#aluno_hardskill-delete))
+8. aluno_softskills ([POST](#aluno_softskills-post), [DELETE](#aluno_softskills-delete))
+9. aluno_turma ([POST](#aluno_turma-post), [DELETE](#aluno_turma-delete))
 
 #### URL para os recursos
 |URL | MÉTODO | DESCRIÇÃO|
