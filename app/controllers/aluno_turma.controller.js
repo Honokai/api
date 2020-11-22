@@ -30,7 +30,7 @@ exports.destroy = async (obj, id_aluno) => {
   }
 
   return aluno.removeTurma(novo_turma).then(
-    data => {return data>0?{"mensagem":"Registros alterados "+ data}: {"mensagem":"Nenhum registro alterado"}
+    data => {return data>0?{"mensagem":"Registros deletados "+ data}: {"mensagem":"Nenhum registro deletado"}
   }).catch(error => {return error})
  
 }

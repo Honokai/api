@@ -113,9 +113,9 @@ exports.destroy = function _callee2(obj, id_aluno) {
         case 16:
           return _context2.abrupt("return", aluno.removeTurma(novo_turma).then(function (data) {
             return data > 0 ? {
-              "mensagem": "Registros alterados " + data
+              "mensagem": "Registros deletados " + data
             } : {
-              "mensagem": "Nenhum registro alterado"
+              "mensagem": "Nenhum registro deletado"
             };
           })["catch"](function (error) {
             return error;
